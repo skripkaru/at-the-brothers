@@ -1,0 +1,26 @@
+.team {
+  padding-bottom: 60px;
+
+  @media (min-width: 992px) {
+    padding-bottom: 120px;
+  }
+
+  @media (min-width: 1200px) {
+    padding-bottom: 180px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+
+    .title {
+      margin-bottom: 0;
+    }
+
+    @media (min-width: 992px) {
+      margin-bottom: 2.5rem;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+.tabs {
+
+  &__control {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: .5rem;
+    margin-bottom: 1rem;
+    overflow-x: auto;
+  }
+
+  &__control-item {
+    position: relative;
+    padding-bottom: .5rem;
+    font-weight: 500;
+    font-size: 1.25rem;
+    color: var(--white);
+    transition: color var(--transition);
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--accent);
+      transform: scale(0);
+      transition: transform var(--transition);
+    }
+
+    &:hover {
+      color: var(--accent);
+    }
+
+    &:focus {
+      outline: 2px solid var(--accent);
+    }
+
+    &:focus:not(&:focus-visible) {
+      outline: none;
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--accent);
+    }
+
+    &:active,
+    &.active {
+      color: var(--accent);
+
+      &:before {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &__content {
+    min-height: 260px;
+    display: none;
+
+    @media (min-width: 992px) {
+      min-height: 290px;
+    }
+
+    &.active {
+      display: block;
+    }
+  }
+}
